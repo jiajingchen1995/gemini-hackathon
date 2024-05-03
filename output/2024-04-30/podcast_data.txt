@@ -1,0 +1,194 @@
+
+Titles:
+Tesla shares drop nearly 6% after Musk cuts about 500 jobs in Supercharger team
+Super Micro pushes up full-year revenue forecast on strong AI demand
+Amazon profit more than triples, topping Wall Street expectations
+Pinterest shares soar 18% on earnings beat, strong revenue growth
+AMD says it will sell $4 billion in AI chips; stock drops on in-line forecast
+Amazon's cloud margin widens on accelerating revenue growth
+Amazon’s advertising revenue jumps 24% in first quarter
+Doctors tap personal savings to pay costs from Change Healthcare cyberattack
+Binance founder Changpeng Zhao sentenced to 4 months in prison after plea deal
+Eight newspaper publishers sue Microsoft and OpenAI over copyright infringement
+Meta hit with major EU probe into disinformation handling ahead of European elections
+ISS endorses most of activist Ancora's nominees for Norfolk Southern board
+Musk lays off Tesla senior executives, The Information reports
+Binance founder to find out if prison is coming — what lawyers are expecting
+
+top_news_prompt: Suppose you are the chief editor at CNBC-TechCheck-Briefing. You need to select 5 most important news events to put into today's briefing(You might be able to see some hint by how many times a news event is reported, but also consider what your audience of CNBC-TechCheck-Briefing is interested in). Return the title of the event in order of importance for these unqiue events.             Here are the news of today:
+TechCrunch
+
+
+The Verge
+
+
+CNBC Tech
+Tesla shares drop nearly 6% after Musk cuts about 500 jobs in Supercharger team
+Super Micro pushes up full-year revenue forecast on strong AI demand
+Amazon profit more than triples, topping Wall Street expectations
+Pinterest shares soar 18% on earnings beat, strong revenue growth
+AMD says it will sell $4 billion in AI chips; stock drops on in-line forecast
+Amazon's cloud margin widens on accelerating revenue growth
+Amazon’s advertising revenue jumps 24% in first quarter
+Doctors tap personal savings to pay costs from Change Healthcare cyberattack
+Binance founder Changpeng Zhao sentenced to 4 months in prison after plea deal
+Eight newspaper publishers sue Microsoft and OpenAI over copyright infringement
+Meta hit with major EU probe into disinformation handling ahead of European elections
+ISS endorses most of activist Ancora's nominees for Norfolk Southern board
+Musk lays off Tesla senior executives, The Information reports
+Binance founder to find out if prison is coming — what lawyers are expecting
+
+Top News:
+1. amazon profit more than triples, topping wall street expectations
+2. pinterest shares soar 18% on earnings beat, strong revenue growth
+3. tesla shares drop nearly 6% after musk cuts about 500 jobs in supercharger team
+4. amazon's cloud margin widens on accelerating revenue growth
+5. amd says it will sell $4 billion in ai chips; stock drops on in-line forecast
+
+Generate_script_prompt:
+
+        Prompt: Give a quick tech news update script in the style of CNBC techcheck briefing as an example.
+        Response: I'm Wall-E, and this is your CNBC techcheck Briefing. Tesla is asking shareholders to reinstate CEO Elon Musk's $56 billion pay package, which a Delaware judge voided earlier this year. The judge ruled that the record-setting compensation deal was, quote, deeply flawed. Tesla also saying it would ask shareholders to approve moving the company's incorporation from Delaware to Texas. The company has hired a proxy solicitor and plans to spend millions of dollars to help secure votes for the two proposals. Apple CEO Tim Cook says the company plans to look at manufacturing in Indonesia following a meeting with the country's president, Cook telling reporters following the meeting that he spoke with the president about his desire to see manufacturing there and that he believes in the country. The comments come as Apple is pushed to diversify its supply chain with more manufacturing outside of China in countries such as Vietnam and India. Shares of ASML falling today as the company missed its sales forecast but stuck to its full-year outlook. Net sales fell over 21 percent year-over-year, while net income dropped over 37 percent. ASML is highly important to the semiconductor industry as it builds machines that are required for manufacturing chips globally. Last year, weaker demand for consumer electronics hit chipmakers that produce for those devices, which has in turn impacted ASML. That's all for today. We'll see you back here tomorrow.
+        Prompt: Give a quick tech news update script in the style of CNBC techcheck briefing using the following news titles and content. Closely follow how CNBC techcheck chooses context to put into the script, the langauge style and sentence structure. Use the same beginning and ending(including mentioning host Wall-E), and replace CNBC techcheck briefing to 'AI briefing' 
+ "title0:
+Amazon (AMZN) Q1 earnings report 2024
+description0:
+Amazon reported better-than-expected earnings and revenue for the first quarter, driven by growth in advertising and cloud computing. The stock ticked higher in extended trading.
+Here's how the company did:
+Earnings per share: 98 cents vs. 83 cents expected by LSEG
+98 cents vs. 83 cents expected by LSEG Revenue: $143.3 billion vs. $142.5 billion expected by LSEG
+Wall Street is also looking at these key numbers:
+Amazon Web Services: $25 billion vs. $24.5 billion in revenue, according to StreetAccount
+$25 billion vs. $24.5 billion in revenue, according to StreetAccount Advertising: $11.8 billion vs. 11.7 billion in revenue, according to StreetAccount
+Operating income soared more than 200% in the period to $15.3 billion, far outpacing revenue growth, the latest sign that the company's cost-cutting measures and focus on efficiency is bolstering its bottom line. AWS accounted for 62% of total operating profit. Net income also more than tripled to $10.4 billion, or 98 cents a share, from $3.17 billion, or 31 cents a share, a year ago.
+Sales increased 13% from $127.4 billion a year earlier.
+Amazon expects a continued jump in profitability for the second quarter but at a more measured pace. The company said operating income will be $10 billion to $14 billion, up from $7.7 billion a year earlier.
+Revenue in the current quarter is expected to be in the $144 billion to $149 billion range, Amazon said, representing growth of 7% to 11%. Analysts were expecting growth of 12% to $150.1 billion, according to LSEG.
+Sales at AWS accelerated 17% in the first quarter to $25 billion, topping Wall Street's forecast for sales growth of 12% to $24.5 billion. For the past year, growth in AWS has slowed, as businesses trimmed their cloud spend. But Amazon executives have said they're seeing cost optimizations taper off, and they've indicated that demand for generative artificial intelligence can be a boon for its cloud business.
+Amazon's earnings growth has been driven in part by widespread cost-cutting, tweaks to its fulfillment operations, and the stabilizing of cloud spending. CEO Andy Jassy has become more disciplined in the company's spending, while growing profitable services like advertising, cloud computing, Prime memberships and its third-party marketplace.
+The company has laid off more than 27,000 employees since late 2022, with the cuts bleeding into 2024. During the first quarter, Amazon let go hundreds of staffers in its health and AWS businesses.
+Amazon's advertising unit saw sales surge 24%, just ahead of consensus estimates. It's the first report since Amazon started running ads in Prime Video, a move analysts predict could generate significant revenue over time.
+The company's ad business, which grew faster than retail or cloud computing, has become an increasingly important profit driver for Amazon and has emerged as a main player in online advertising.
+That market overall started growing again after a brutal 2022, when brands reeled in spending to cope with inflation and rising interest rates. Meta , Snap and Google parent Alphabet all reported first-quarter results last week and showed better-than-expected revenue growth, which was primarily driven by improvements across their ad businesses.
+Revenue from third-party seller services, which includes commissions collected by Amazon, fulfillment, shipping fees and other charges, continued to surge. Sales in the unit grew 16% year over year to $34.5 billion.
+Amazon remains a standout among mega-cap internet companies in that it's yet to implement a quarterly dividend, even as cash and equivalents jumped to $73.9 billion in the quarter from $54.3 billion a year earlier. Meta announced its first dividend in February at 50 cents a share, and Alphabet followed, telling investors last week that it will start paying a dividend of 20 cents a share. Those companies also announced plans to buy back tens of billions of dollars in stock.
+This story is developing. Check back for updates.
+
+title1:
+Pinterest shares soar 18% on earnings beat, strong revenue growth
+description1:
+Shares of Pinterest popped 18% in extended trading Tuesday after the company reported first-quarter results that beat analysts' estimates and showed its fastest revenue growth since 2021.
+Here's how the company did, compared to LSEG analyst expectations:
+Earnings per share: 20 cents adjusted vs. 13 cents expected
+20 cents adjusted vs. 13 cents expected Revenue: $740 million vs. $700 million expected
+Revenue for the quarter jumped 23% from $602.6 million a year earlier. Pinterest's net loss for the first quarter narrowed to $24.8 million, or a 4 cent loss per share, from $208.6 million, or a 31 cent loss per share, a year earlier.
+Pinterest reported 518 global monthly active users (MAUs) for the first quarter, up 12% year over year. Wall Street was expecting MAUs 504.9 million, according to StreetAccount. Pinterest said Generation Z is its fastest-growing, largest and most engaged demographic on the platform.
+The company's average revenue per user was $1.46 for the period, while StreetAccount was expecting $1.40 per user.
+In its first-quarter release, Pinterest CEO Bill Ready said the company is driving greater returns for advertisers because of its investments in AI and shoppability.
+"We're executing with tremendous clarity and focus, shipping new products and experiences that users want, and in doing so, we're finding our best product market fit in years," Ready said.
+Digital advertising companies like Pinterest have started growing again after a brutal 2022, when brands reined in spending to cope with high levels of inflation. Meta , Snap and Google parent Alphabet all reported first-quarter results last week that exceeded analysts' estimates for revenue.
+For its second quarter, Pinterest expects to report revenue between $835 million and $850 million, which equates to growth of 18% to 20% year over year. Analysts were expecting revenue of $827 million.
+
+title2:
+Tesla shares drop after Musk cuts about 500 jobs in Supercharger team
+description2:
+Tesla shares fell nearly 6% on Tuesday following news that CEO Elon Musk was pressing ahead with more job cuts at Tesla , impacting an estimated 500 employees in its Supercharger team.
+The stock closed at $183.28 and is now down 26% for the year.
+According to The Information, Musk sent an email to managers at Tesla overnight announcing the departure of key executives, including Senior Director of EV Charging Rebecca Tinucci, and Director of Vehicle Programs Daniel Ho. In the email, Musk also expressed consternation that Tesla management hadn't thinned out the company's staff more promptly at his direction.
+Several employees whose roles were cut and one person who is still working at Tesla in California confirmed with CNBC the details of the ongoing reorganization, asking to remain unnamed to discuss sensitive issues. Other laid-off Tesla employees posted publicly about Tesla shrinking the Supercharger team.
+In cutting that group, Tesla revealed it's throttling the expansion of its Supercharger network in the U.S. The move comes after Tesla struck partnerships with Ford , GM and other industry players ensuring they would manufacture cars using the Tesla NACS (North American Charging Standard) for compatibility with Tesla charging stations, and allowing those companies' customers to use Tesla stations.
+The layoffs now underway are part of a massive cost-cutting measure by Tesla following a 9% drop in revenue in the first quarter this year, the steepest year-over-year decline since 2012. Profits were cut in half during the first three months of 2024 as Tesla discounted cars and issued incentives to spur demand.
+Current and former employees told CNBC that Tesla began laying off some employees as early as January, with the broader cuts picking up this month. They said some colleagues who thought their jobs were safe received termination notices on Friday and Tuesday.
+Tesla gave no warning to investors about a pullback in plans to build out charging infrastructure. Nor did the company give a heads up to some charging network partners, including small and medium-sized businesses that install and maintain EV charging equipment for Tesla at key locations around the United States.
+Andres Pinter, co-CEO of Supercharger network contractor Bullet EV, told CNBC, "My team woke up to a sharp kick in the pants this morning. Emails we sent to twenty or so different charger construction contacts were bounced with the same autoreply reading, 'This email address is no longer valid. Any future emails sent to this address will not be received.'"
+Pinter said he thinks "It will take years for the other charger networks to catch up," but Tesla abandoning a near-term plan to expand aggressively in the U.S. leaves room for other players.
+Musk wrote on X that "Tesla still plans to grow the Supercharger network, just at a slower pace for new locations and more focus on 100% uptime and expansion of existing locations."
+Tesla makes money from environmental credits and fees for charging sessions, and already operates about one in three public, electric vehicle charging stations in the U.S.
+Transportation has been responsible for 25% of carbon emissions from human activity globally, according to estimates by the non-profit International Council on Clean Transportation. While Musk has more recently talked up AI initiatives at Tesla, and its quest to develop self-driving technology, the company reiterated in its annual report out this week that its mission is to "accelerate the world's transition to sustainable energy.".
+The decline in Tesla's stock on Tuesday followed a 15% rally on Monday, the best trading day of the year. The rally came after news reports said a visit by Musk to China had yielded an important deal with Baidu for mapping tech that could power future self-driving software in the country for Tesla.
+Tesla has long promised but has not yet delivered autonomous vehicles.
+In a note to investors out this week, JL Warren Capital founder Junheng Li wrote that there are too many "missing critical details," to justify the gains on Monday. "We believe that the take rate and incremental revenue from the localized FSD– assuming the similar level of autonomous as TSLA's latest v12 – will be significantly lower in China than in the US."
+Xpeng, Nio and other EV makers currently offer level 2 systems that are given away to buyers as an incentive in China.
+WATCH: Tesla's tentative autonomous driving deal in China is not enough to make it 'magnificent' yet
+
+title3:
+AWS Q1 earnings report 2024
+description3:
+Amazon said Tuesday that revenue from its cloud unit grew 17% year over year in the first quarter, a more rapid rate than Wall Street had expected.
+Revenue from Amazon Web Services came out to $25.04 billion, according to the company's earnings statement. Analysts surveyed by StreetAccount had been expecting $24.49 billion. The growth marked a step up from the 13% increase Amazon reported for AWS in the fourth quarter.
+While Amazon remains mostly an online retailer, the company has become a major entity in information technology, supplying large companies, startups and governments with computing resources, database software and networking services. AWS accounts for 17% of Amazon's $143,313 billion in overall revenue.
+Cloud is also a reliable source of profit for Amazon, thanks to high software margins. AWS delivered $9.42 billion in operating income, or about 62% of Amazon's total. Analysts polled by StreetAccount had expected $7.52 billion in AWS operating income. The AWS operating margin widened to 37.6%, the widest at least since 2014.
+Last week, Google and Microsoft both reported accelerating cloud growth. Amazon remains bigger than both in the market, which is becoming larger more quickly than other areas of information technology, including devices and data center systems, according to industry researcher Gartner.
+During the quarter, Amazon said it had completed a $4 billion investment in startup Anthropic, which is relying on AWS chips for training artificial intelligence models. Adam Selipsky, the CEO of AWS, told Axios in an interview that Anthropic offers the "leading models in the market right now" in some areas. Google, which invested in Anthropic earlier, offers its own AI models, as does Microsoft-backed OpenAI.
+"We've accumulated a multibillion-dollar revenue run rate already," Andy Jassy, Amazon's CEO and formerly the head of AWS, said on a conference call with analysts, speaking of generative AI. Analysts presume that Microsoft has billions in annualized cloud revenue tied to AI as well.
+Amazon saw further reductions in cloud optimization efforts during the quarter, after many organizations sought to make the most of their cloud spending, Brian Olsavsky, the company's finance chief, said on the call.
+WATCH: Cloud players can monetize AI quicker than other companies, says CFRA's Zino on Microsoft earnings
+
+title4:
+AMD earnings report Q1 2024
+description4:
+Lisa Su, president and CEO of AMD, talks about the AMD EPYC processor during a keynote address at the 2019 CES in Las Vegas, Nevada, U.S., January 9, 2019.
+Advanced Micro Devices reported first-quarter earnings and sales on Tuesday that were slightly ahead of Wall Street expectations, and provided an in-line forecast for the current quarter.
+Shares dropped 7% in extended trading.
+Here's how it did versus LSEG consensus expectations for the quarter ended in March:
+Earnings per share : 62 cents adjusted versus 61 cents expected
+: 62 cents adjusted versus 61 cents expected Revenue: $5.47 billion vs. $5.46 billion expected.
+AMD said it expects about $5.7 billion in sales in the current quarter, in line with Wall Street estimates of the same approximate total. That would represent about 6% annual growth.
+The company reported net income of $123 million, or 7 cents per share, versus a net loss of $139 million, or 9 cents per share, during the year-earlier period. Revenue was up about 2% from a year earlier.
+AMD shares have risen 14% in 2024, so despite meeting forecast estimates and signaling growth in AI chip sales, Tuesday's results were not enough to prevent the stock from sliding.
+The chipmaker said its closely watched Data Center segment grew 80% year-over-year to $2.3 billion thanks to sales of its MI300 series AI chips, which compete with Nvidia's graphics processing units.
+CEO Lisa Su said Microsoft, Meta, and Oracle use AMD's MI300X. AMD said it had sold over $1 billion of the chips since it launched in the fourth quarter of 2023.
+AMD expects $4 billion in 2024 AI chip sales, up from a $3.5 billion forecast in January. For comparison, Nvidia, the biggest vendor of AI server chips, reported $18.4 billion in sales — mostly AI chips — in its data center segment alone for the January quarter, the most recent for which financial results are available.
+Su told investors on Tuesday that the company was working on new AI chips and successors to the current generation. "We're getting much closer to our top AI customers. They're actually giving us significant feedback on the road map," Su said.
+AMD also makes central processors that are often paired with advanced AI chips in servers. Su told analysts on a call that the company believed it had taken market share in the server CPU segment — likely from Intel . Su said that AMD sees "signs of improving demand" for its CPUs due to the AI server boom.
+AMD's weakest division was its gaming segment, which was down 48% year over year to $922 million, which the company said was due to lower chip sales for game consoles and PCs. AMD makes chips for Sony's PlayStation 5, for example. AMD's gaming sales trailed a StreetAccount estimate of $969 million.
+AMD's original business, processors for chips and PCs, is reported as client segment revenue. AMD reported $1.4 billion in first-quarter sales, an 85% annual increase, suggesting that last year's PC slump is over. AMD's PC processors can run artificial intelligence programs locally, which would allow it to power so-called "AI PCs" that many industry participants are banking on to drive new laptop and desktop sales.
+The company's embedded segment, made up of products acquired as part of the Xilinx acquisition in 2022, reported falling sales, dropping 46% year over year to $846 million, lagging Wall Street expectations of $942 million."
+
+Response:
+
+Script:
+wall-e here, and this is your cnbc ai briefing.
+        amazon reported better-than-expected earnings and revenue for the first quarter, driven by growth in advertising and cloud computing. the stock ticked higher in extended trading.
+        revenue for the quarter jumped 23% from $602.6 million a year earlier. pinterest's net loss for the first quarter narrowed to $24.8 million, or a 4 cent loss per share, from $208.6 million, or a 31 cent loss per share, a year earlier.
+        tesla shares fell nearly 6% on tuesday following news that ceo elon musk was pressing ahead with more job cuts at tesla, impacting an estimated 500 employees in its supercharger team.
+        amazon web services came out to $25.04 billion, according to the company's earnings statement. analysts surveyed by streetaccount had been expecting $24.49 billion. the growth marked a step up from the 13% increase amazon reported for aws in the fourth quarter.
+        advanced micro devices reported first-quarter earnings and sales on tuesday that were slightly ahead of wall street expectations, and provided an in-line forecast for the current quarter. shares dropped 7% in extended trading.
+        that's all for today. we'll see you back here tomorrow
+
+Polished Script:
+i'm wall-e, welcoming you to today's tech briefing for tuesday april 30th. amazon shares ticked higher in extended trading on tuesday after the company reported better-than-expected earnings and revenue for the first quarter, driven by growth in advertising and cloud computing. revenue for the quarter jumped 23% from $602.6 million a year earlier. amazon web services came out to $25.04 billion, according to the company's earnings statement. analysts surveyed by streetaccount had been expecting $24.49 billion. the growth marked a step up from the 13% increase amazon reported for aws in the fourth quarter. tesla shares fell nearly 6% on tuesday following news that ceo elon musk was pressing ahead with more job cuts at tesla, impacting an estimated 500 employees in its supercharger team. pinterest's net loss for the first quarter narrowed to $24.8 million, or a 4 cent loss per share, from $208.6 million, or a 31 cent loss per share, a year earlier. advanced micro devices reported first-quarter earnings and sales on tuesday that were slightly ahead of wall street expectations, and provided an in-line forecast for the current quarter. shares dropped 7% in extended trading. that's all for today. we'll see you back here tomorrow
+
+Podcast Title:
+EP-1 **amazon's Q1 Surge 📈, Tesla Job Cuts ✂️, Amd's Steady Quarter 📈**
+
+Podcast Description:
+- amazon reports strong earnings, driven by advertising and cloud computing growth.
+- tesla shares decline after news of job cuts in the supercharger team.
+- pinterest narrows net loss in the first quarter.
+- advanced micro devices reports slightly better-than-expected earnings and sales, but shares drop in extended trading
+
+Polished Script (Spanish):
+atención, soy wall-e y este es tu briefing de actualización de noticias tecnológicas de ia. amazon informó ganancias e ingresos mejores de lo esperado para el primer trimestre, impulsados ​​por el crecimiento en publicidad y computación en la nube. las acciones subieron en las operaciones extendidas. esto es lo que hizo la empresa: ganancias por acción: 98 centavos frente a los 83 centavos esperados por lseg 98 centavos frente a los 83 centavos esperados por lseg ingresos: 143 300 millones de dólares frente a los 142 500 millones de dólares esperados por lseg wall street también está observando estas cifras clave: amazon web services: 25 000 millones de dólares frente a los 24 500 millones de dólares en ingresos, según streetaccount 25 000 millones de dólares frente a los 24 500 millones de dólares en ingresos, según streetaccount publicidad: 11 800 millones de dólares frente a los 11 700 millones de dólares en ingresos, según streetaccount el ingreso operativo se disparó más del 200% en el período a 15 300 millones de dólares, superando con creces el crecimiento de los ingresos, la última señal de que las medidas de reducción de costos y el enfoque en la eficiencia de la empresa están impulsando sus resultados. aws representó el 62% de las ganancias operativas totales. los ingresos netos también se triplicaron con creces, pasando de 3170 millones de dólares, o 31 centavos por acción, hace un año, a 10 400 millones de dólares, o 98 centavos por acción. las ventas aumentaron un 13% desde los 127 400 millones de dólares del año anterior. amazon espera un salto continuo en la rentabilidad para el segundo trimestre, pero a un ritmo más mesurado. la compañía dijo que el ingreso operativo será de 10 000 millones de dólares a 14 000 millones de dólares, en comparación con los 7 700 millones de dólares del año anterior. se espera que los ingresos en el trimestre actual estén en el rango de 144 000 millones de dólares a 149 000 millones de dólares, dijo amazon, lo que representa un crecimiento del 7% al ​​11%. los analistas esperaban un crecimiento del 12% a 150 100 millones de dólares, según lseg. las ventas en aws se aceleraron un 17% en el primer trimestre a 25 000 millones de dólares, superando el pronóstico de wall street de un crecimiento de las ventas del 12% a 24 500 millones de dólares. durante el año pasado, el crecimiento en aws se ha desacelerado, ya que las empresas reducen su gasto en la nube. pero los ejecutivos de amazon han dicho que están viendo una disminución de las optimizaciones de costos y han indicado que la demanda de inteligencia artificial generativa puede ser una gran ayuda para su negocio en la nube. el crecimiento de las ganancias de amazon ha sido impulsado en parte por la reducción generalizada de costos, los ajustes en sus operaciones de cumplimiento y la estabilización del gasto en la nube. el ceo andy jassy se ha vuelto más disciplinado en el gasto de la compañía, mientras hace crecer servicios rentables como publicidad, computación en la nube, membresías prime y su mercado de terceros. la compañía ha despedido a más de 27 000 empleados desde fines de 2022, y los recortes se extendieron hasta 2024. durante el primer trimestre, amazon despidió a cientos de empleados en sus negocios de salud y aws. la unidad publicitaria de amazon experimentó un aumento de las ventas del 24%, justo por encima de las estimaciones de consenso. es el primer informe desde que amazon comenzó a publicar anuncios en prime video, un movimiento que los analistas predicen podría generar importantes ingresos con el tiempo. el negocio publicitario de la compañía, que creció más rápido que el comercio minorista o la computación en la nube, se ha convertido en un motor de ganancias cada vez más importante para amazon y se ha convertido en un actor principal en la publicidad en línea. ese mercado en general comenzó a crecer nuevamente después de un brutal 2022, cuando las marcas frenaron el gasto para hacer frente a la inflación y las crecientes tasas de interés. meta, snap y la empresa matriz de google, alphabet, informaron los resultados del primer trimestre la semana pasada y mostraron un crecimiento de ingresos mejor de lo esperado, impulsado principalmente por mejoras en sus negocios publicitarios. los ingresos de los servicios de terceros, que incluyen las comisiones cobradas por amazon, el cumplimiento, las tarifas de envío y otros cargos, continuaron aumentando. las ventas en la unidad crecieron un 16% interanual a 34 500 millones de dólares. amazon sigue siendo un destacado entre las empresas de internet de mega capitalización en que aún no ha implementado un dividendo trimestral, incluso cuando el efectivo y los equivalentes aumentaron a 73 900 millones de dólares en el trimestre desde los 54 300 millones de dólares del año anterior. meta anunció su primer dividendo en febrero a 50 centavos por acción, y alphabet lo siguió, diciendo a los inversores la semana pasada que comenzaría a pagar un dividendo de 20 centavos por acción. estas empresas también anunciaron planes para recomprar acciones por valor de decenas de miles de millones de dólares. esta historia está evolucionando. vuelve para obtener actualizaciones
+
+Podcast Title (Spanish):
+EP-1 Resultados de Amazon: Publicidad Imparable, Aws Sólido, Eficiencia Dispara Ganancias 🚀📈📊
+
+Podcast Description (Spanish):
+- ganancias e ingresos de amazon superan las expectativas para el primer trimestre, impulsados por publicidad y computación en la nube.
+- aws representa el 62% de las ganancias operativas totales.
+- amazon espera un salto continuo en la rentabilidad para el segundo trimestre, pero a un ritmo más moderado.
+- el negocio publicitario de amazon crece un 24%.
+- amazon sigue siendo un destacado entre las empresas de internet de mega capitalización en que aún no ha implementado un dividendo trimestral
+
+Polished Script (Chinese):
+大家好，我是华尔街日报，这是您的科技快讯简报。特斯拉要求股东恢复 ceo 埃隆·马斯克 560 亿美元的薪酬方案，该方案此前被特拉华州的一名法官否决。这位法官裁定，创纪录的薪酬协议“存在严重缺陷”。特斯拉还表示，将要求股东批准将公司注册地从特拉华州迁至德克萨斯州。该公司已聘请代理人，并计划投入数百万美元帮助为这两个提案获取选票。苹果公司首席执行官蒂姆·库克表示，公司计划访问了该国总统后在印度尼西亚考察制造业。库克在会后告诉记者，他与总统谈到了希望在该国看到制造业，并且他相信该国。这些言论发表之际，苹果公司面临着来自越南和印度等其他国家对在中国的供应链进行更多多元化的推动。由于未能实现销售预测，但坚持全年前景，asml 的股价今日下跌。净销售额同比下降超过 21%，而净收入下降超过 37%。asml 对半导体行业至关重要，因为它制造了全球制造芯片所需的机器。去年，对消费电子产品的需求减弱打击了为这些设备生产芯片的芯片制造商，而这反过来又影响了 asml。就是这样。我们明天再见。
+
+Podcast Title (Chinese):
+EP-1 特斯拉要求恢复 560 亿美元薪酬计划，苹果考察印尼制造业，asml 股价因业绩低于预期而下跌
+
+Podcast Description (Chinese):
+- 特斯拉要求股东恢复埃隆·马斯克 560 亿美元的薪酬方案
+- 特斯拉还表示，将要求股东批准将公司注册地迁至德克萨斯州
+- 据苹果公司首席执行官蒂姆·库克称，他与总统讨论了希望在印尼看到制造业的前景
+- asml的净销售额和净收入大幅下降，原因是未能达到销售预测，但坚持全年前景

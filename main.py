@@ -23,7 +23,6 @@ logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Configuration constants
-TEXT_MODEL = "GPT4"
 MAX_RETRIES = 1
 RETRY_DELAY = 2  # seconds in case of retries
 PRODUCTION_MODE = True  # Set to True to enable audio file generation
@@ -31,15 +30,15 @@ BGM_PATH = "bgm.mp3"
 
 
 class NewsPodcastOrchestrator:
-    """ Orchestrates the creation of a podcast script from scraped news, using OpenAI's GPT models. """
+    """ Orchestrates the creation of a podcast script from scraped news, using Gemini models. """
 
     def __init__(self, date, news_to_URL):
         self.gemini_model = genai.GenerativeModel('gemini-pro')
         self.date = date
         self.news_to_URL = news_to_URL
 
-    def ask_gpt(self, input_ask):
-        """ Sends a request to GPT model and handles retries if necessary. """
+    def ask_gemini(self, input_ask):
+        """ Sends a request to Gemini model and handles retries if necessary. """
         attempts = 0
         while attempts < MAX_RETRIES:
             try:
@@ -48,18 +47,18 @@ class NewsPodcastOrchestrator:
                 if isinstance(response, str):
                     return response.lower().strip().strip('.')
             except Exception as e:
-                logging.error(f"Error in ask_gpt: {e}. Retrying...")
+                logging.error(f"Error in ask_gemini: {e}. Retrying...")
                 time.sleep(RETRY_DELAY)
                 attempts += 1
         return None
 
     def translate_text(self, text, target_language):
-        """ Translates text to the specified target language using the GPT model. """
+        """ Translates text to the specified target language using the Gemini model. """
         # first prompt:
         prompt = f"Translate the English part of the text to {target_language}. Do not translate word by word; Do Translation naturally:\n\n{text}\n Translation:"
         # second prompt:
         # prompt = f"Translate the English part of the text to {target_language}. Use your maximum effort to adjust the content to adapt for culture and language differences so that it flows the best. Remember to use your creativity to adjust the content for the best {target_language} experience::\n\n{text}\n Translation:"
-        translation = self.ask_gpt(prompt)
+        translation = self.ask_gemini(prompt)
         return translation
 
     def get_top_news(self):
@@ -72,7 +71,7 @@ class NewsPodcastOrchestrator:
             Here are the news of today:\n" + formatted_text
         role = "Output the response as string titles in the seperated by newline. Each title should be exactly how it is in the news source."
 
-        output = self.ask_gpt(input_ask)
+        output = self.ask_gemini(input_ask)
         return input_ask, output.split('\n') if output else []
 
     def generate_podcast_script(self, news_concat, language=None):
@@ -90,7 +89,7 @@ class NewsPodcastOrchestrator:
         response_begin = "Response:"
         input_ask = first_shot + prompt + response_begin
 
-        return input_ask, self.ask_gpt(input_ask)
+        return input_ask, self.ask_gemini(input_ask)
 
     def get_news_content_concat(self, top_news):
         news_concat = []
@@ -119,12 +118,12 @@ class NewsPodcastOrchestrator:
         return news_concat
 
     def polish_podcast_script(self, script):
-        """Polishes the podcast script using the GPT API."""
+        """Polishes the podcast script using the Gemini API."""
 
         month, day, day_of_week = get_day_of_week(self.date.strftime('%Y-%m-%d'))
         intro_date = day_of_week + " " + month + " " + str(day) 
         
-        # Make a request to the GPT API to polish the script
+        # Make a request to the Gemini API to polish the script
         input_ask = script + f"""
         This is not up to standards with the style of 'CNBC techcheck', here is a example. Carefully inspect the language style, sentence structure, use of words and order of words in sentences of the following examples of 'CNBC techcheck'. Start the podcast with "i'm wall-e, welcoming you to today's tech briefing for {intro_date}.:
 example 1:
@@ -135,7 +134,7 @@ Make my original podcast script more like the examples above to an extend that i
 refined podcast script:
 """
         role = "Output the polished script."
-        polished_script = orchestrator.ask_gpt(input_ask)
+        polished_script = orchestrator.ask_gemini(input_ask)
         return polished_script
 
     def generate_podcast_description(self, script, language=None):
@@ -155,7 +154,7 @@ refined podcast script:
             Description:
             """
 
-        return self.ask_gpt(input_ask)
+        return self.ask_gemini(input_ask)
 
     def generate_speech(self, script, output_path):
         speech = gTTS(script, lang='en')
@@ -201,7 +200,7 @@ refined podcast script:
         if language:
             output_response_prompt = f"Output the Title in {language}."
         input_ask = "Generate a title for this podcast. Include three key topics (if there are many, choose the three most important ones). Incorporate emojis where appropriate. Follow the style of titles such as: 'Tesla Showcases FSD Demo 🚗, Adam Neuman's WeWork Bid 💰, CSV Conundrums 🖥️','Anthropic’s $4B Amazon Boost 💰, Brex's Valuation Leap to $12B 💳, Strategies for Success ✨','The OpenAI Voice Revolution 🗣️, AI Safety Measures 🦺, LLMs Go Mobile 📱'. Here's the transcript excerpt: " + transcript + "\n" + output_response_prompt + "\nTitle:"
-        return self.ask_gpt(input_ask)
+        return self.ask_gemini(input_ask)
 
 
 def remove_leading_numbers(lst):
