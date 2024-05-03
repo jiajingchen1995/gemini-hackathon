@@ -3,13 +3,13 @@ import requests
 from bs4 import BeautifulSoup
 import datetime
 import re
-import openai
-from openai import OpenAI
+import google.generativeai as genai
 from dotenv import load_dotenv
 import os
 OUTPUT_DIRECTORY = './output/'  # Default output directory for files
-
-
+GOOGLE_GEMINI_API_KEY = os.environ['GOOGLE_GEMINI_API_KEY']
+genai.configure(api_key=GOOGLE_GEMINI_API_KEY)
+model = genai.GenerativeModel('gemini-pro')
 def is_today(date_input, current_date):
     if isinstance(date_input, datetime.datetime):
         return date_input.date() == current_date
@@ -83,15 +83,8 @@ def classify_titles(titles):
         "\n".join(f"{i+1}. {title}" for i, title in enumerate(titles))
    # print((prompt_text))
     try:
-        response = client.chat.completions.create(
-            model=TEXT_MODEL,
-            messages=[
-                {"role": "system", "content": "Output the response as a dictionary of specific event names and the titles that belong to them."},
-                {"role": "user", "content": prompt_text}
-            ]
-        )
-       # print(response)
-        output = response.choices[0].message.content
+        response = model.generate_content(prompt_text)
+        output = response.candidates[0].content.parts[0].text
         return output
     except Exception as e:
         print(f"An error occurred: {e}")
@@ -102,14 +95,8 @@ def select_events(titles):
     prompt_text = "Suppose you are the chief editor at CNBC-TechCheck-Briefing. You need to select 5 most important news events to put into today's briefing(You might be able to see some hint by how many times a news event is reported, but also consider what your audience of CNBC-TechCheck-Briefing is interested in). Return the title of the event in order of importance for these unqiue events. Here are the news of today:\n\n" + \
         "\n".join(f"{i+1}. {title}" for i, title in enumerate(titles))
     try:
-        response = client.chat.completions.create(
-            model=TEXT_MODEL,
-            messages=[
-                {"role": "system", "content": " Output the response as string titles seperated by newline."},
-                {"role": "user", "content": prompt_text}
-            ]
-        )
-        output = response.choices[0].message.content
+        response = model.generate_content(prompt_text)
+        output = response.candidates[0].content.parts[0].text
         return output
     except Exception as e:
         print(f"An error occurred: {e}")
@@ -141,14 +128,8 @@ def select_events_by_source(titles):
         "\n Grouped By Source:\n" + titles
 
     try:
-        response = client.chat.completions.create(
-            model=TEXT_MODEL,
-            messages=[
-                {"role": "system", "content": "Output the response as string titles seperated by newline that are most important."},
-                {"role": "user", "content": prompt_text}
-            ]
-        )
-        output = response.choices[0].message.content
+        response = model.generate_content(prompt_text)
+        output = response.candidates[0].content.parts[0].text
         return output
     except Exception as e:
         print(f"An error occurred: {e}")
@@ -157,13 +138,9 @@ def select_events_by_source(titles):
 
 if __name__ == '__main__':
     load_dotenv()
-    TEXT_MODEL = "gpt-4-turbo-preview"
-    client = OpenAI()
-    client.api_key = os.getenv('OPENAI_API_KEY')
     group_by_source = True  # Change to true for new mode
     # today = datetime.date.today()
-    today = datetime.date(2024, 4, 17)
-   # print(today)
+    today = datetime.date(2024, 4, 30)
     all_news = scrape_verge(
         today) + scrape_cnbctech(today) + scrape_techcrunch(today)
     titles = [str(news[0]) for news in all_news]
