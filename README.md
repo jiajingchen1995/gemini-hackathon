@@ -1,6 +1,7 @@
 # the-ai-briefing-room
 
-![Design Diagram](briefing-room.jpg)
+
+![image](https://github.com/jiajingchen1995/gemini-hackathon/assets/45247795/d1cfc4fc-2e6c-48fa-8376-a6469aca70b4)
 
 ### Installation
 
@@ -30,9 +31,10 @@ After running the script, the output will be organized into folders by date with
 ### Configuration
 Create a .env file in the root directory of your project and add the following content:
 
-`
+```
+GOOGLE_GEMINI_API_KEY = [your Gemini key]
 EMAIL = [anchor login email]
 PASSWORD = [anchor login password]
-`
+```
 
 Replace [anchor login email] and [anchor login password] with your actual login credentials for Anchor.
