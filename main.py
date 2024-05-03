@@ -1,6 +1,5 @@
 import logging
 import time
-import openai
 from pathlib import Path
 import os
 from dotenv import load_dotenv
@@ -10,12 +9,15 @@ from newsplease import NewsPlease
 import re
 import difflib
 from addMusic import add_bgm
-from openai import AzureOpenAI
 from utils import spanish_title_case, english_title_case, get_day_of_week
 import sys
 import requests
+import subprocess
+import google.generativeai as genai
+from gtts import gTTS
 
-
+GOOGLE_GEMINI_API_KEY = os.environ['GOOGLE_GEMINI_API_KEY']
+genai.configure(api_key=GOOGLE_GEMINI_API_KEY)
 # Setup basic configuration for logging
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s - %(levelname)s - %(message)s')
@@ -31,31 +33,18 @@ BGM_PATH = "bgm.mp3"
 class NewsPodcastOrchestrator:
     """ Orchestrates the creation of a podcast script from scraped news, using OpenAI's GPT models. """
 
-    def __init__(self, api_key, date, news_to_URL):
-
-        self.azure_client = AzureOpenAI(
-            azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
-            api_key=os.getenv("AZURE_OPENAI_API_KEY"),
-            api_version=os.getenv("API_VERSION")
-        )
-
-        # depricated
-       # self.openai_client = openai.OpenAI(api_key=api_key)
-
+    def __init__(self, date, news_to_URL):
+        self.gemini_model = genai.GenerativeModel('gemini-pro')
         self.date = date
         self.news_to_URL = news_to_URL
 
-    def ask_gpt(self, input_ask, role="system"):
+    def ask_gpt(self, input_ask):
         """ Sends a request to GPT model and handles retries if necessary. """
         attempts = 0
         while attempts < MAX_RETRIES:
             try:
-                completion = self.azure_client.chat.completions.create(
-                    model=TEXT_MODEL,
-                    messages=[{"role": "system", "content": role},
-                              {"role": "user", "content": input_ask}]
-                )
-                response = completion.choices[0].message.content
+                completion = self.gemini_model.generate_content(input_ask)
+                response = completion.candidates[0].content.parts[0].text
                 if isinstance(response, str):
                     return response.lower().strip().strip('.')
             except Exception as e:
@@ -83,7 +72,7 @@ class NewsPodcastOrchestrator:
             Here are the news of today:\n" + formatted_text
         role = "Output the response as string titles in the seperated by newline. Each title should be exactly how it is in the news source."
 
-        output = self.ask_gpt(input_ask, role)
+        output = self.ask_gpt(input_ask)
         return input_ask, output.split('\n') if output else []
 
     def generate_podcast_script(self, news_concat, language=None):
@@ -146,7 +135,7 @@ Make my original podcast script more like the examples above to an extend that i
 refined podcast script:
 """
         role = "Output the polished script."
-        polished_script = orchestrator.ask_gpt(input_ask, role)
+        polished_script = orchestrator.ask_gpt(input_ask)
         return polished_script
 
     def generate_podcast_description(self, script, language=None):
@@ -169,34 +158,8 @@ refined podcast script:
         return self.ask_gpt(input_ask)
 
     def generate_speech(self, script, output_path):
-
-        azure_api_key = os.getenv('AZURE_OPENAI_API_KEY')
-        azure_endpoint = os.getenv('AZURE_OPENAI_ENDPOINT')
-
-        # Your deployment name
-        deployment_name = 'podcast_tts'
-
-        # URL for the request
-        url = f"{azure_endpoint}/openai/deployments/{deployment_name}/audio/speech?api-version=2024-02-15-preview"
-
-        # Headers and data payload
-        headers = {
-            "api-key": azure_api_key,
-            "Content-Type": "application/json"
-        }
-        data = {
-            "model": "tts-1-hd",
-            "input": script,
-            "voice": "alloy"
-        }
-
-        # Sending POST request
-        response = requests.post(url, headers=headers, json=data)
-
-        # Saving the response content to a file
-        with open(output_path, 'wb') as file:
-            file.write(response.content)
-
+        speech = gTTS(script, lang='en')
+        speech.save(output_path)
         print(f"Audio file saved as {output_path}")
 
     def text_to_speech(self, script, output_path, language='English'):
@@ -252,12 +215,8 @@ def remove_leading_numbers(lst):
 if __name__ == "__main__":
     # Load environment variables from .env file
     load_dotenv()
-
-    api_key = os.getenv('OPENAI_API_KEY')
-    # api_key = os.getenv('AZURE_OPENAI_API_KEY')
-
-    today = datetime.date.today()
-   # today = datetime.date(2024, 4, 28)
+    # today = datetime.date.today()
+    today = datetime.date(2024, 4, 30)
     today_date = today.strftime('%Y-%m-%d')
 
     if len(sys.argv) > 1:
@@ -277,7 +236,7 @@ if __name__ == "__main__":
     # add today as file path of output_directory
     os.makedirs(output_directory, exist_ok=True)
 
-    orchestrator = NewsPodcastOrchestrator(api_key, today, news_to_URL)
+    orchestrator = NewsPodcastOrchestrator(today, news_to_URL)
 
     top_news_prompt, top_news = orchestrator.get_top_news()
     news_concat = orchestrator.get_news_content_concat(
